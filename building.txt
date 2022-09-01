@@ -1,0 +1,20 @@
+Caesar_Name = "Tiberius"
+Caesar_Number = "2"
+
+print("there once was an " + Caesar_Name + ",")
+print(Caesar_Name + " was the " + Caesar_Number + " Caesar ")
+print("Football is Back")
+### \n to separate print result in console
+print("Pittsburgh\nSteelers")
+print("Pittsburgh\nSteelers")
+Super_Bowl_Champs = "Pittsburgh Steelers"
+print(Super_Bowl_Champs + " will win 2026")
+print(Super_Bowl_Champs.lower())
+### lower() function produces lowercase version of stored variable
+print(Super_Bowl_Champs.upper())
+### can do .isupper or .islower to verify if variable is upper or lower
+print(Super_Bowl_Champs.isupper())
+print(Super_Bowl_Champs.upper().isupper())
+### if manipulator is before question, can be made true
+print(len(Super_Bowl_Champs))
+### Count characters in the variable
