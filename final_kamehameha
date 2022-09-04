@@ -1,0 +1,36 @@
+import discord
+import random
+import requests
+import json
+from requests.exceptions import HTTPError
+
+for url in ['https://api-optimistic.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x7F5c764cBc14f9669B88837ca1490cCa17c31607&address=0x8492be1aed52F19677a59934886e4FeCEF57Cde8&tag=latest&apikey=YourApiKeyToken%27', 'https://api-optimistic.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x7F5c764cBc14f9669B88837ca1490cCa17c31607&address=0x8492be1aed52F19677a59934886e4FeCEF57Cde8&tag=latest&apikey=YourApiKeyToken%27']:
+    try:
+        response = requests.get(url)
+        balance = response.text.split(':')
+        lbalance = balance[-1]
+       
+
+        # If the response was successful, no Exception will be raised
+        response.raise_for_status()
+    except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')  # Python 3.6
+    except Exception as err:
+        print(f'Other error occurred: {err}')  # Python 3.6
+    else:
+        print(lbalance)
+        
+token = "MTAxNTc2Nzk0MTgxMzM3MDk5NQ.G2qhwl.lfEX68m4LGKwB4h8g7KmhDSVvAkQ--918ETtqM"
+
+client = discord.Client()
+
+@client.event_
+async def_on_ready():
+	print("We have logged in as {0.user}". format client)
+
+client.run(TOKEN)
+
+# Lines 1 -2: Needed for Discord Functions; 3 - 6 from your code. 
+# I think that we need the variable 'lbalance' to be used as a variable in the discord client bot as well
+# Essentially: Etherscan Balance API - > token client ID
+# Note line 23 is the particular bot in discord
